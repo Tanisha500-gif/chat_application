@@ -22,6 +22,11 @@ A simple real-time chat application built using Python socket programming and mu
 ```text
 chat_application/
 │
-├── server.py
-├── client.py
-└── README.md
+├── client/
+│   └── client.py
+│
+├── server/
+│   └── server.py
+│
+├── README.md
+└── .gitignore
