@@ -4,4 +4,4 @@ __pycache__/
 venv/
 env/
 .env
-.vscode/
+.vscode/node_modules/ 

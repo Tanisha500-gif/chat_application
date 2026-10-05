@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Simple Chat Application</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div id="login-screen">
+
+    <div class="login-box">
+
+        <div class="logo">💬</div>
+
+        <h1>Simple Chat</h1>
+
+        <p>Enter your nickname to join the chat</p>
+
+        <input
+            id="nickname"
+            type="text"
+            placeholder="Choose your nickname"
+        >
+
+        <button onclick="joinChat()">
+            Join Chat
+        </button>
+
+        <div id="login-error"></div>
+
+    </div>
+
+</div>
+
+
+<div id="chat-screen" class="hidden">
+
+    <header class="topbar">
+
+        <div>
+
+            <h1>💬 Simple Chat</h1>
+
+            <span>Local Chat Application</span>
+
+        </div>
+
+        <div class="online">
+
+            <span class="dot"></span>
+            Online
+
+        </div>
+
+    </header>
+
+
+    <main class="chat-layout">
+
+
+        <aside class="sidebar">
+
+            <h2>Users</h2>
+
+            <div id="user-list"></div>
+
+        </aside>
+
+
+        <section class="chat-area">
+
+
+            <div class="chat-header">
+
+                <h2>General Chat</h2>
+
+                <span id="current-user"></span>
+
+            </div>
+
+
+            <div id="messages"
+                 class="messages">
+            </div>
+
+
+            <form
+                class="message-form"
+                onsubmit="sendMessage(event)"
+            >
+
+                <input
+                    id="message-input"
+                    type="text"
+                    placeholder="Type a message..."
+                    autocomplete="off"
+                >
+
+                <button type="submit">
+                    Send
+                </button>
+
+            </form>
+
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<script src="https://cdn.socket.io/4.7.5/socket.io.min.js">
+</script>
+
+<script src="{{ url_for('static', filename='script.js') }}">
+</script>
+
+</body>
+
+</html>
